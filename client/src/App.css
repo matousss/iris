@@ -1,6 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-size: 16px;
-  background-color:rgb(80, 80, 80);
   transition: 200ms;
 }
 
