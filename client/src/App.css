@@ -5,6 +5,7 @@
 :root {
   font-size: 16px;
   transition: 200ms;
+  font-family: 'Raleway', sans-serif;
 }
 
 .body {
@@ -16,7 +17,7 @@
   width: 100vw;
 }
 
-/*login page*/
+/*login page
 .background {
   background-image: linear-gradient(to bottom right, #710193, #1520A6);
 }
@@ -29,6 +30,16 @@
 
 .loginButton {
   background-color: #1520A6;
+} */
+
+.new-login{
+  background-image: url(./assets/layered-waves-haikei.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-container{
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /*main page*/
