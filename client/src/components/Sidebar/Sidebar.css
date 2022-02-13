@@ -1,0 +1,27 @@
+.sidebar-container{
+    width: 64px;
+    height: 100vh;
+    position: fixed;
+    background-image: linear-gradient(to bottom right, #710193, #1520A6);
+    transition: 300ms;
+    color: white;
+}
+
+.sidebar{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.users, .servers{
+    height: 50vh;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-container:hover{
+    width: 300px;
+}

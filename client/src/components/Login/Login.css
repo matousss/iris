@@ -1,0 +1,13 @@
+.background {
+    background-image: linear-gradient(to bottom right, #710193, #1520A6);
+}
+
+.title {
+    font-size: 10rem;
+    font-weight: 100;
+    color: white;
+}
+
+.loginButton {
+    background-color: #1520A6;
+}
