@@ -15,7 +15,6 @@ export default function NewLogin() {
         })
             .then(response => response.json())
             .then(data => console.log(data))
-
     }
 
     return (
@@ -23,7 +22,7 @@ export default function NewLogin() {
             <div className='form-container w-full md:w-1/2 h-5/6 md:h-3/4 m-6 rounded-lg flex flex-col items-center'>
                 <h1 className='text-black text-6xl mb-4 text-center'>Welcome to Iris</h1>
                 <form className='flex flex-col w-4/5 md:w-2/5' onSubmit={handleSubmit}>
-                    <label className='my-1'>username</label>
+                    <label className='my-1'>Username</label>
                     <input
                         className='bg-white outline-1 outline-gray-300 text-xs text-gray-700 p-1 mb-1 rounded-lg'
                         type="text"
@@ -31,10 +30,10 @@ export default function NewLogin() {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
-                    <label className='mb-1'>password</label>
+                    <label className='mb-1'>Password</label>
                     <input
                         className='bg-white outline-1 outline-gray-300 text-xs text-gray-700 p-1 mb-1 rounded-lg'
-                        type="text"
+                        type="password"
                         required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
