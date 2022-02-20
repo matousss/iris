@@ -2,8 +2,10 @@ import './App.css';
 import Login from './components/Login/Login'
 import MainPage from './components/MainPage/MainPage'
 import * as Page from './utils/PageEnum'
+import MenuContainer from "./components/MenuContainer";
 import NewLogin from './components/NewLogin'
 import Signup from "./components/Signup";
+import Verify from './components/Verify'
 import React, {useState} from 'react'
 
 function App() {
@@ -15,13 +17,12 @@ function App() {
                 return <NewLogin setUser={setUser} setPage={setPage}/>
             case Page.signup:
                 return <Signup/>
-            case Page.main:
-                console.log('main')
-                return <h1>main</h1>
+            case Page.verify:
+                return <Verify/>
         }
     }
     return (
-        selectComponent(page)
+        page !== Page.main ? <MenuContainer component={selectComponent(page)}/> : <MainPage/>
     );
 }
 

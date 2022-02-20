@@ -32,14 +32,10 @@
   background-color: #1520A6;
 } */
 
-.new-login{
+.menu-container{
   background-image: url(./assets/layered-waves-haikei.svg);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.form-container{
-  background-color: rgba(255, 255, 255);
 }
 
 /*main page*/
