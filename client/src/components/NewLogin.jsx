@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import * as Page from '../utils/PageEnum'
 
-export default function NewLogin({setUser}) {
+export default function NewLogin({setUser, setPage}) {
     const [usernameField, setUsernameField] = useState('')
     const [passwordField, setPasswordField] = useState('')
-    const [errorVisible, setErrorVisible] = useState(false)
+    const [error, setError] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -21,8 +22,9 @@ export default function NewLogin({setUser}) {
     const handleFetch = (data) => {
         if (data.result !== 'invalid_user'){
             setUser(data.user)
+            setPage(Page.main)
         } else {
-            setErrorVisible(true)
+            setError('wrong username or password')
         }
     }
 
@@ -47,11 +49,10 @@ export default function NewLogin({setUser}) {
                         value={passwordField}
                         onChange={(e) => setPasswordField(e.target.value)}
                     />
-                    {errorVisible &&
-                        <span className='font-semibold text-xs text-red-700'>incorrect username or password</span>
-                    }
+                    <span className='font-semibold text-xs text-red-700'>{error}</span>
                     <button className='mt-3 p-1 rounded-lg bg-orange-500 hover:bg-rose-500'>log in</button>
                 </form>
+                <button className='mt-4 text-xs underline' onClick={() => setPage(Page.signup)}>Don't have an account yet? Sign up</button>
             </div>
         </div>
     )
