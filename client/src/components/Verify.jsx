@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
 import * as Page from '../utils/PageEnum'
 
-export default function NewLogin({username, setPage}) {
+export default function Verify({username, setPage}) {
     const [codeField, setCodeField] = useState('')
     const [error, setError] = useState('')
 
+    const placeholder = () => {
+        setPage(Page.main)
+    }
+
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const data = new FormData()
-        data.append("username", username)
-        data.append("activation_code", codeField)
-        fetch('http://127.0.0.1:8000/api/auth/activate', {
-            method: 'POST',
-            body: data
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
+        placeholder();
+        // e.preventDefault()
+        // const data = new FormData()
+        // data.append("username", username)
+        // data.append("activation_code", codeField)
+        // fetch('http://127.0.0.1:8000/api/auth/activate', {
+        //     method: 'POST',
+        //     body: data
+        // })
+        //     .then(response => response.json())
+        //     .then(data => console.log(data))
     }
 
     // const handleFetch = (data) => {
@@ -29,7 +34,8 @@ export default function NewLogin({username, setPage}) {
 
     return (
         <>
-            <h1 className='text-black text-6xl mb-4 text-center'>Almost there</h1>
+            <h1 className='text-black text-3xl mb-4 text-center'>Almost there</h1>
+            <p className='text-gray-500 my-4'>Please enter the code we've sent to your email</p>
             <form className='flex flex-col w-4/5 md:w-2/5' onSubmit={handleSubmit}>
                 <label className='my-1'>Activation code</label>
                 <input

@@ -6,6 +6,8 @@ import MenuContainer from "./components/MenuContainer";
 import NewLogin from './components/NewLogin'
 import Signup from "./components/Signup";
 import Verify from './components/Verify'
+import NewMain from "./components/NewMain";
+
 import React, {useState} from 'react'
 
 function App() {
@@ -16,13 +18,14 @@ function App() {
             case Page.login:
                 return <NewLogin setUser={setUser} setPage={setPage}/>
             case Page.signup:
-                return <Signup/>
+                return <Signup setUser={setUser} setPage={setPage}/>
             case Page.verify:
-                return <Verify/>
+                return <Verify setUser={setUser} setPage={setPage}/>
         }
     }
     return (
-        page !== Page.main ? <MenuContainer component={selectComponent(page)}/> : <MainPage/>
+        //page !== Page.main ? <MenuContainer component={selectComponent(page)}/> : <MainPage/>
+        <NewMain/>
     );
 }
 
