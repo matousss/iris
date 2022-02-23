@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import * as Page from '../utils/PageEnum'
 
 export default function Signup({setUser, setPage}) {
@@ -11,7 +11,7 @@ export default function Signup({setUser, setPage}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (passwordField !== passwordAgainField){
+        if (passwordField !== passwordAgainField) {
             setErrorMessage("passwords don't match")
         }
         const formData = new FormData()
@@ -27,15 +27,16 @@ export default function Signup({setUser, setPage}) {
     }
 
     const handleFetch = (data) => {
-        if (data.result === 'success'){
+        if (data.result === 'success') {
             setUser(data.user)
             setPage(Page.verify)
+            console.log(data.token)
         } else {
             const error = data.details
-            if (error.hasOwnProperty('email')){
+            if (error.hasOwnProperty('email')) {
                 setErrorMessage('account with email ' + emailField + ' already exists')
             }
-            if (error.hasOwnProperty('username')){
+            if (error.hasOwnProperty('username')) {
                 setErrorMessage('username ' + usernameField + ' is already taken')
             }
         }
@@ -79,7 +80,11 @@ export default function Signup({setUser, setPage}) {
                 />
                 <span className='font-semibold text-xs text-red-700'>{errorMessage}</span>
                 <button className='mt-3 p-1 rounded-lg bg-orange-500 hover:bg-rose-500'>sign up</button>
+
             </form>
+            <button className='mt-4 text-xs underline' onClick={() => setPage(Page.login)}>
+                Go back ↲
+            </button>
         </>
     )
 }
