@@ -1,6 +1,4 @@
 import './App.css';
-import Login from './components/Login/Login'
-import MainPage from './components/MainPage/MainPage'
 import * as Page from './utils/PageEnum'
 import MenuContainer from "./components/MenuContainer";
 import NewLogin from './components/NewLogin'
@@ -24,8 +22,7 @@ function App() {
         }
     }
     return (
-        //page !== Page.main ? <MenuContainer component={selectComponent(page)}/> : <MainPage/>
-        <NewMain/>
+        page !== Page.main ? <MenuContainer component={selectComponent(page)}/> : <NewMain user={user} setUser={setUser}/>
     );
 }
 

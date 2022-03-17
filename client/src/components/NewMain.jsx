@@ -1,10 +1,10 @@
 import React from 'react';
 import Sidebar from "./Sidebar";
 
-export default function NewMain() {
+export default function NewMain(props) {
     return (
         <div className='h-screen'>
-            <Sidebar/>
+            <Sidebar user={props.user} setUser={props.setUser}/>
         </div>
     );
 }
