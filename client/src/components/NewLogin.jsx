@@ -7,16 +7,16 @@ export default function NewLogin({setUser, setPage}) {
     const [error, setError] = useState('')
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const data = new FormData()
-        data.append("username", usernameField)
-        data.append("password", passwordField)
+        e.preventDefault();
+        const data = new FormData();
+        data.append("username", usernameField);
+        data.append("password", passwordField);
         fetch('http://127.0.0.1:8000/api/auth/login', {
             method: 'POST',
             body: data
         })
             .then(response => response.json())
-            .then(data => handleFetch(data))
+            .then(data => handleFetch(data));
     }
 
     const handleFetch = (data) => {

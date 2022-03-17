@@ -61,6 +61,19 @@
   border-radius: 4px;
 }
 
+/*main page*/
+.messages{
+  scrollbar-width: thin;
+}
+
+.message-input{
+  scrollbar-width: none;
+}
+
+.message-input::-webkit-scrollbar {
+  width: 0;
+}
+
 /*!*main page*!*/
 /*.main-container {*/
 /*  margin-left: 64px;*/
