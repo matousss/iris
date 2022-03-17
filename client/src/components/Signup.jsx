@@ -44,45 +44,45 @@ export default function Signup({setUser, setPage}) {
 
     return (
         <>
-            <h1 className='text-black text-3xl mb-4 text-center'>No account? No problem!</h1>
+            <h1 className='text-black text-5xl mb-6 text-center'>No account? No problem!</h1>
             <form className='flex flex-col w-4/5 md:w-2/5' onSubmit={handleSubmit}>
-                <label className='my-1 text-sm'>Email</label>
+                <label className='my-1 text-lg'>Email</label>
                 <input
-                    className='bg-white outline-1 outline-gray-300 text-xs text-gray-700 p-1 mb-1 border-2 rounded-lg'
+                    className='bg-white outline-1 outline-gray-300 text-gray-700 p-1 mb-1 border-2 rounded-lg'
                     type="text"
                     required
                     value={emailField}
                     onChange={(e) => setEmailField(e.target.value)}
                 />
-                <label className='my-1 text-sm'>Username</label>
+                <label className='my-1 text-lg'>Username</label>
                 <input
-                    className='bg-white outline-1 outline-gray-300 text-xs text-gray-700 p-1 mb-1 border-2 rounded-lg'
+                    className='bg-white outline-1 outline-gray-300 text-gray-700 p-1 mb-1 border-2 rounded-lg'
                     type="text"
                     required
                     value={usernameField}
                     onChange={(e) => setUsernameField(e.target.value)}
                 />
-                <label className='mb-1 text-sm'>Password</label>
+                <label className='mb-1 text-lg'>Password</label>
                 <input
-                    className='bg-white outline-1 outline-gray-300 text-xs text-gray-700 p-1 mb-1 border-2 rounded-lg'
+                    className='bg-white outline-1 outline-gray-300 text-gray-700 p-1 mb-1 border-2 rounded-lg'
                     type="password"
                     required
                     value={passwordField}
                     onChange={(e) => setPasswordField(e.target.value)}
                 />
-                <label className='mb-1 text-sm'>Password again</label>
+                <label className='mb-1 text-lg'>Password again</label>
                 <input
-                    className='bg-white outline-1 outline-gray-300 text-xs text-gray-700 p-1 mb-1 border-2 rounded-lg'
+                    className='bg-white outline-1 outline-gray-300 text-gray-700 p-1 mb-1 border-2 rounded-lg'
                     type="password"
                     required
                     value={passwordAgainField}
                     onChange={(e) => setPasswordAgainField(e.target.value)}
                 />
-                <span className='font-semibold text-xs text-red-700'>{errorMessage}</span>
-                <button className='mt-3 p-1 rounded-lg bg-orange-500 hover:bg-rose-500'>sign up</button>
+                <span className='font-semibold text-sm text-red-700'>{errorMessage}</span>
+                <button className='text-xl mt-3 p-1 rounded-lg bg-orange-500 hover:bg-rose-500'>sign up</button>
 
             </form>
-            <button className='mt-4 text-xs underline' onClick={() => setPage(Page.login)}>
+            <button className='mt-4 text-lg underline' onClick={() => setPage(Page.login)}>
                 Go back ↲
             </button>
         </>
