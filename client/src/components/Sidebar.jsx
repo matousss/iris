@@ -19,7 +19,7 @@ export default function Sidebar(props) {
 
                 <SearchField visible={visible}/>
 
-                <div className='w-full overflow-y-scroll border-y-2 border-gray-700 buttons'>
+                <div className='w-full overflow-x-hidden overflow-y-scroll border-y-2 border-gray-700 buttons'>
                     <UserButton avatar={avatar} username='Dane' visible={visible} setActiveConversation={props.setActiveConversation}/>
                     <UserButton avatar={avatar} username='Chci' visible={visible} setActiveConversation={props.setActiveConversation}/>
                     <UserButton avatar={avatar} username='Ti' visible={visible} setActiveConversation={props.setActiveConversation}/>
