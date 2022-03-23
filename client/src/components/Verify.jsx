@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import * as Page from '../utils/PageEnum'
 
 export default function Verify({username, setPage}) {
     const [codeField, setCodeField] = useState('')
     const [error, setError] = useState('')
 
-    const placeholder = () => {
+    const placeholder = (data) => {
         setPage(Page.main)
     }
 
     const handleSubmit = (e) => {
-        placeholder();
         // e.preventDefault()
         // const data = new FormData()
         // data.append("username", username)
@@ -21,6 +20,16 @@ export default function Verify({username, setPage}) {
         // })
         //     .then(response => response.json())
         //     .then(data => console.log(data))
+        e.preventDefault()
+        const formData = new FormData()
+        formData.append("activation_code", codeField)
+        formData.append("username", username);
+        fetch('http://127.0.0.1:8000/api/auth/activate', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => placeholder(data))
     }
 
     // const handleFetch = (data) => {
@@ -48,6 +57,9 @@ export default function Verify({username, setPage}) {
                 <span className='font-semibold text-xs text-red-700'>{error}</span>
                 <button className='mt-3 p-1 rounded-lg bg-orange-500 hover:bg-rose-500'>verify</button>
             </form>
+            <button className='mt-4 text-lg underline' onClick={() => setPage(Page.login)}>
+                Go back ↲
+            </button>
         </>
     )
 }
