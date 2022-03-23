@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import * as Page from '../utils/PageEnum'
 
 export default function NewLogin({setUser, setPage}) {
@@ -20,12 +20,16 @@ export default function NewLogin({setUser, setPage}) {
     }
 
     const handleFetch = (data) => {
-        if (data.result !== 'invalid_user'){
-            setUser(data.user)
-            setPage(Page.main)
-        } else {
-            setError('wrong username or password')
+        if (data.result === 'inactive_user') {
+            setUser(usernameField)
+            setPage(Page.verify)
+            return
         }
+
+        if (data.result === 'invalid_user') return setError('wrong username or password')
+
+        setUser(data.user)
+        setPage(Page.main)
     }
 
     return (
