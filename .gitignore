@@ -20,3 +20,4 @@ yarn-error.log*
 
 *.pyc
 /server/db.sqlite3
+/client/package-lock.json
