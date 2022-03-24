@@ -28,24 +28,9 @@ export default function Sidebar(props) {
                     <UserButton avatar={avatar} username='Palce' visible={visible} setActiveConversation={props.setActiveConversation}/>
                     <UserButton avatar={avatar} username='U Nohou' visible={visible} setActiveConversation={props.setActiveConversation}/>
                     <UserButton avatar={avatar} username='Plsky' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
-                    <UserButton avatar={avatar} username='franta' visible={visible} setActiveConversation={props.setActiveConversation}/>
                 </div>
 
-                <Signout visible={visible} setUser={props.setUser}/>
+                <Signout visible={visible} setUser={props.setUser} setPage={props.setPage}/>
             </div>
         </div>
     );

@@ -22,7 +22,7 @@ function App() {
         }
     }
     return (
-        page !== Page.main ? <MenuContainer component={selectComponent(page)}/> : <NewMain user={user} setUser={setUser}/>
+        page !== Page.main ? <MenuContainer component={selectComponent(page)}/> : <NewMain user={user} setUser={setUser} setPage={setPage}/>
     );
 }
 
