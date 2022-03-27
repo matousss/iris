@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import * as Page from '../utils/PageEnum'
 
-export default function NewLogin({setUser, setPage}) {
+export default function NewLogin(props) {
     const [usernameField, setUsernameField] = useState('')
     const [passwordField, setPasswordField] = useState('')
     const [error, setError] = useState('')
@@ -21,15 +21,20 @@ export default function NewLogin({setUser, setPage}) {
 
     const handleFetch = (data) => {
         if (data.result === 'inactive_user') {
-            setUser(usernameField)
-            setPage(Page.verify)
-            return
+            props.setUser(usernameField);
+            props.setPage(Page.verify);
+            return;
         }
 
         if (data.result === 'invalid_user') return setError('wrong username or password')
 
-        setUser(data.user)
-        setPage(Page.main)
+        props.setUser(data.user);
+        props.stayLoggedIn ? localStorage.setItem('user', JSON.stringify(data.user)) : sessionStorage.setItem('user', JSON.stringify(data.user));
+        props.setPage(Page.main);
+    }
+
+    const handleCheck = () => {
+        props.setStayLoggedIn(!props.stayLoggedIn);
     }
 
     return (
@@ -52,10 +57,18 @@ export default function NewLogin({setUser, setPage}) {
                     value={passwordField}
                     onChange={(e) => setPasswordField(e.target.value)}
                 />
+                <div className='flex items-center'>
+                    <input className='ml-1'
+                           type='checkbox'
+                           onChange={handleCheck}
+                           checked={props.stayLoggedIn}
+                    />
+                    <span className='ml-2 text-sm'>stay logged in</span>
+                </div>
                 <span className='font-semibold text-sm text-red-700'>{error}</span>
                 <button className='text-xl mt-3 p-1 rounded-lg bg-orange-500 hover:bg-rose-500'>log in</button>
             </form>
-            <button className='mt-6 text-lg underline' onClick={() => setPage(Page.signup)}>Don't have an account yet? Sign up</button>
+            <button className='mt-6 text-lg underline' onClick={() => props.setPage(Page.signup)}>Don't have an account yet? Sign up</button>
         </>
     )
 }

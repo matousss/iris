@@ -4,6 +4,8 @@ import * as Page from '../utils/PageEnum'
 function Signout(props) {
     function signOut(){
         props.setUser(null);
+        localStorage.removeItem('user');
+        props.stayLoggedIn ? localStorage.removeItem('user') : sessionStorage.removeItem('user');
         props.setPage(Page.login);
     }
 
