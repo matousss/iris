@@ -3,6 +3,7 @@ import UserCard from "./UserCard";
 import SearchField from "./SearchField";
 import UserButton from "./UserButton";
 import Signout from "./Signout";
+import {isMobile} from "react-device-detect";
 
 //temp import
 import avatar from '../assets/avatar.svg'
