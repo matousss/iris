@@ -1,9 +1,9 @@
 import './App.css';
-import * as Page from './utils/PageEnum'
+import * as Page from './utils/PageEnum';
 import MenuContainer from "./components/MenuContainer";
-import NewLogin from './components/NewLogin'
+import NewLogin from './components/NewLogin';
 import Signup from "./components/Signup";
-import Verify from './components/Verify'
+import Verify from './components/Verify';
 import NewMain from "./components/NewMain";
 
 import React, {useEffect, useState} from 'react'
