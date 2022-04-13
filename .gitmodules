@@ -1,0 +1,6 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/matousss/iris-server
+[submodule "client"]
+	path = client
+	url = https://github.com/matousss/iris-client
